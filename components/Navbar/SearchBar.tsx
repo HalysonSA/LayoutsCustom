@@ -4,19 +4,29 @@ import { AiOutlineSearch } from 'react-icons/ai'
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('')
 
+    typeof window !== 'undefined'
+        ? document.addEventListener('keydown', (e) => {
+              if (e.key === '/' || (e.ctrlKey && e.key === 'k')) {
+                  e.preventDefault()
+                  document.getElementById('search-bar')?.focus()
+              }
+          })
+        : null
+
     function handleSearch() {
         console.log('Pesquisando...')
     }
 
     return (
         <form
-            className="search-bar border-red-500 flex items-center "
+            className="border-red-500 flex items-center "
             onSubmit={(e) => {
-                e.preventDefault
+                e.preventDefault()
                 handleSearch()
             }}
         >
             <input
+                id="search-bar"
                 type="text"
                 placeholder="Busque aqui"
                 className="bg-white outline-none text-black h-10 rounded-l-full px-2 w-28 md:w-48"
