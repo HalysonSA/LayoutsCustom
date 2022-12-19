@@ -19,7 +19,7 @@ const SearchBar = () => {
 
     return (
         <form
-            className="border-red-500 flex items-center "
+            className="flex items-center "
             onSubmit={(e) => {
                 e.preventDefault()
                 handleSearch()
@@ -35,7 +35,7 @@ const SearchBar = () => {
                 }}
             />
             <button
-                className="bg-gray-800  px-3 h-10 rounded-r-full hover:bg-gray-700 "
+                className=" px-3 h-10 rounded-r-full border-2 border-gray-700 bg-gray-700 hover:bg-gray-800 transition-all"
                 type="submit"
             >
                 <AiOutlineSearch size={20} />
